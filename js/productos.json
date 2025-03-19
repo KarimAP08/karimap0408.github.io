@@ -1,0 +1,62 @@
+[
+  {
+    "id": "rock-01",
+    "titulo": "Nevermind - Nirvana",
+    "imagen": "./img/Nevermind.jpg",
+    "categoria": {
+      "nombre": "Rock",
+      "id": "rock"
+    },
+    "precio": 1500
+  },
+  {
+    "id": "rock-02",
+    "titulo": "Led Zeppelin IV - Led Zeppelin",
+    "imagen": "./img/IV.jpg",
+    "categoria": {
+      "nombre": "Rock",
+      "id": "rock"
+    },
+    "precio": 1800
+  },
+  {
+    "id": "pop-01",
+    "titulo": "Thriller - Michael Jackson",
+    "imagen": "./img/Thriller.jpg",
+    "categoria": {
+      "nombre": "Pop",
+      "id": "pop"
+    },
+    "precio": 2000
+  },
+  {
+    "id": "pop-02",
+    "titulo": "1989 - Taylor Swift",
+    "imagen": "./img/1989.jpg",
+    "categoria": {
+      "nombre": "Pop",
+      "id": "pop"
+    },
+    "precio": 1700
+  },
+  {
+    "id": "jazz-01",
+    "titulo": "Kind of Blue - Miles Davis",
+    "imagen": "./img/Kind.jpg",
+    "categoria": {
+      "nombre": "Jazz",
+      "id": "jazz"
+    },
+    "precio": 1600
+  },
+  {
+    "id": "jazz-02",
+    "titulo": "A Love Supreme - John Coltrane",
+    "imagen": "./img/Love.jpg",
+    "categoria": {
+      "nombre": "Jazz",
+      "id": "jazz"
+    },
+    "precio": 1900
+  }
+]
