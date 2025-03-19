@@ -1,6 +1,8 @@
 let productosEnCarrito = localStorage.getItem("productos-en-carrito");
 productosEnCarrito = productosEnCarrito ? JSON.parse(productosEnCarrito) : [];
 
+console.log("Productos en carrito al iniciar:", productosEnCarrito);
+
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const contenedorCarritoProductos = document.querySelector("#carrito-productos");
 const contenedorCarritoAcciones = document.querySelector("#carrito-acciones");
@@ -11,6 +13,7 @@ const contenedorTotal = document.querySelector("#total");
 const botonComprar = document.querySelector("#carrito-acciones-comprar");
 
 function cargarProductosCarrito() {
+    console.log("Cargando productos en carrito:", productosEnCarrito);
     if (productosEnCarrito && productosEnCarrito.length > 0) {
         contenedorCarritoVacio.classList.add("disabled");
         contenedorCarritoProductos.classList.remove("disabled");
@@ -73,7 +76,7 @@ function eliminarDelCarrito(e) {
         position: "right",
         stopOnFocus: true,
         style: {
-            background: "linear-gradient(to right, #4b33a8, #785ce9)",
+            background: "linear-gradient(to right, #1E3A8A, #3B82F6)",
             borderRadius: "2rem",
             textTransform: "uppercase",
             fontSize: ".75rem"
@@ -82,11 +85,12 @@ function eliminarDelCarrito(e) {
             x: '1.5rem',
             y: '1.5rem'
         },
-        onClick: function () { }
+        onClick: function(){}
     }).showToast();
 
     const idBoton = e.currentTarget.id;
     const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+    console.log("Eliminando producto con id:", idBoton, "en índice:", index);
     if (index !== -1) {
         productosEnCarrito.splice(index, 1);
         cargarProductosCarrito();
@@ -116,6 +120,7 @@ function vaciarCarrito() {
 function actualizarTotal() {
     const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
     contenedorTotal.innerText = `$${totalCalculado}`;
+    console.log("Total actualizado:", totalCalculado);
 }
 
 botonComprar.addEventListener("click", comprarCarrito);
@@ -126,4 +131,5 @@ function comprarCarrito() {
     contenedorCarritoProductos.classList.add("disabled");
     contenedorCarritoAcciones.classList.add("disabled");
     contenedorCarritoComprado.classList.remove("disabled");
+    console.log("Compra realizada, carrito vaciado.");
 }
